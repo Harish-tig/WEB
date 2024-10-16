@@ -78,7 +78,7 @@ async def summarize(link_list):
 
                     if text.strip():  # Ensure the text is not empty
                         # Parse and summarize the text
-                        parsed_text = parser.from_string(text, Tokenizer("english"))
+                        parsed_text = parser.from_string(text, Tokenizer("en"))
                         summary = summarizer(parsed_text.document, 5)
 
                         # Join summarized sentences
