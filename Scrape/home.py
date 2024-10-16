@@ -5,6 +5,7 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer
 import asyncio
 import aiohttp
+import nltk
 
 
 
