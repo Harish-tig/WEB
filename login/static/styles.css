@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body background color */
+body {
+    padding-top: 90px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #FEFAE0; /* Light background color */
+    color: #D3D3D3;
+    transition: filter 0.4s ease;
+}
+
+
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 71px;
+    left: 250px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+    display: none;
+    z-index: 999;
+    transition: opacity 0.4s ease;
+}
+
+
+
+
+/* Header styling */
+header {
+    background-color: #525e39; /* Header Background Color */
+    color: white; /* Light Grey */
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001;
+}
+
+/* Span within header */
+header span {
+    color: black; /* Accent color for header */
+}
+
+header span1 {
+    color: red; /* Accent color for header */
+}
+
+/* Navigation styling */
+nav {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+}
+
+/* Menu icon */
+.menu-icon, .close-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: black; /* Color of menu icons */
+    margin: 0 5px;
+}
+
+.close-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+    z-index: 1002;
+}
+
+/* Menu items container */
+#category-menu {
+    list-style-type: none;
+    display: block;
+    background-color: #626F47; /* Menu Background Color */
+    padding: 15px;
+    position: fixed;
+    top: 71px; /* Positioned below the header */
+    left: -250px;
+    height: calc(100% - 71px);
+    width: 250px;
+    transition: left 0.4s ease;
+    z-index: 1001;
+}
+
+/* Menu in open state */
+#category-menu.show {
+    left: 0; /* Slide in from the left */
+}
+
+/* Menu items (links) */
+#category-menu li a {
+    list-style: none;
+    margin: 15px 0;
+    border-bottom: 2px solid #525e39; /* Dark Red Divider */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Link text inside the menu */
+#category-menu li a {
+    color: white; /* Light Grey */
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* Active menu item
+#category-menu li a.active {
+    color: black; /* Medium Dark Red
+    font-weight: bold;
+}*/
+
+.blur {
+    filter: blur(5px);
+    transition: filter 0.4s ease;
+}
+
+/* Hover effect for menu items */
+#category-menu li a:hover {
+    color: black; /* Hover Text Color */
+    background-color: #FEFAE0; /* Dark Red Background on Hover */
+    border-radius: 10px;
+    /*animation: loadingBar 0.5s forwards;*/
+}
+
+/* Hover animation */
+@keyframes loadingBar {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* News block container */
+.news-block {
+    position: relative;
+    margin: 5px;
+    padding: 5rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+/* News container for each block */
+.news-container {
+    background-color: #F2EED7; /* Very Dark Grey */
+    margin-bottom: 20px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle Shadow */
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    width: 100%;
+    border: 5px solid #525e39; /* Dark Red Border */
+}
+
+/* Images inside the news container */
+.news-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 0.09rem;
+    transition: transform 0.2s ease;
+}
+
+/* Headline inside news container */
+.news-container h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    align-items: flex-start;
+    text-align: left;
+    color: black; /* Medium Dark Red */
+}
+
+/* Divider line between left and right container */
+.news-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color:  #525e39; /* Dark Red Divider */
+    transform: translateX(-50%);
+}
+
+/* Alternating news containers */
+.news-container:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Hover effect for news blocks */
+.news-container:hover {
+    transform: scale(1.03);  /* Scale the block slightly on hover */
+}
+
+
+/* Paragraph text styling in the left container */
+.news-container-left p {
+    color: #333; /* Medium Dark Red */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Left container of news (headline and insights) */
+.news-container-left {
+    background-color: #F2EED7; /* Medium Dark Grey */
+    border-radius: 10px;
+}
+
+/* Right container (summary and link) */
+.news-container-right {
+    background-color: #5d7840; /* Dark Grey */
+    border-radius: 10px;
+    display: flex; /* Corrected from display-flex to display: flex */
+    position: relative;
+    flex: auto;
+    flex-grow: 1;
+    text-align: left;
+    padding: 0.4rem;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Aligning left and right containers */
+.news-container-left, .news-container-right {
+    width: 50%;
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Summary section styling */
+.news-summary {
+    background-color:  #F2EED7; /* Dark Grey */
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    padding: 0.4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Paragraph inside the summary section */
+.news-summary p {
+    color: #333; /* Light Grey for readability */
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* Journalist name styling */
+.journalist-name {
+    color: white; /* Medium Dark Red */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.journalist-name a{
+    cursor: alias;
+    color: white;
+}
+
+/* Footer styling */
+footer {
+    background-color: #658147; /* Dark Red */
+    color: #D3D3D3; /* Light Grey */
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Footer content wrapper */
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer heading */
+.footer-content h3 {
+    margin-bottom: 10px;
+}
+
+/* Footer paragraph styling */
+.footer-content p {
+    margin: 5px 0;
+    line-height: 1.6; /* Height of line in footer */
+}

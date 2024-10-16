@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter App Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #f8f8f8;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            height: 80%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-section,
+        .info-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-section {
+            background-color: #f8f8f8;
+            position: relative;
+        }
+
+        .info-section {
+            background-color: #28a745;
+            color: white;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .info-section button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .info-section button:hover {
+            background-color: white;
+            color: #28a745;
+        }
+
+        .login-form {
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            font-size: 14px;
+            border-radius: 30px;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-bottom: 2px solid #28a745;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background-color: #218838;
+        }
+
+        .login-form .forgot-password {
+            font-size: 12px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .login-form .forgot-password a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .login-form .social-login {
+            margin: 20px 0;
+        }
+
+        .login-form .social-login button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        .login-form .social-login .twitter {
+            background-color: #1da1f2;
+            color: white;
+        }
+
+        .login-form .social-login .facebook {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .login-form .social-login .google {
+            background-color: #db4437;
+            color: white;
+        }
+
+        .app-name {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .app-name span {
+            color: black;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .info-section {
+                display: none; /* Hide the info section on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-section">
+            <div class="app-name">
+                NEWSLETTER<span>APP</span>
+            </div>
+            <div class="login-form">
+                <h2>Login</h2>
+                <form id="loginForm" onsubmit="return validateForm()">
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <button type="submit">LOGIN</button>
+                </form>
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div>or use account</div>
+                <div class="social-login">
+                    <button class="twitter"><i class="fab fa-twitter"></i> TWITTER</button>
+                    <button class="facebook"><i class="fab fa-facebook-f"></i> FACEBOOK</button>
+                    <button class="google"><i class="fab fa-google"></i> GOOGLE</button>
+                </div>
+            </div>
+        </div>
+        <div class="info-section">
+            <h2>Hello, Friend!</h2>
+            <p>Enter your personal details and start your journey with us</p>
+            <button style="border-radius: 30px;" onclick="window.location.href='signup.html'">SIGN UP</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter App Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #f8f8f8;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            height: 80%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-section,
+        .info-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .signup-section {
+            background-color: #f8f8f8;
+            position: relative;
+        }
+
+        .info-section {
+            background-color: #28a745;
+            color: white;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .info-section button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .info-section button:hover {
+            background-color: white;
+            color: #28a745;
+        }
+
+        .signup-form {
+            width: 300px;
+            text-align: center;
+        }
+
+        .signup-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            font-size: 14px;
+            border-radius: 30px;
+        }
+
+        .signup-form input:focus {
+            outline: none;
+            border-bottom: 2px solid #28a745;
+        }
+
+        .signup-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-form button:hover {
+            background-color: #218838;
+        }
+
+        .signup-form .login-redirect {
+            font-size: 12px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .signup-form .login-redirect a {
+            color: #28a745;
+            text-decoration: none;
+        }
+
+        .app-name {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .app-name span {
+            color: black;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .info-section {
+                display: none; /* Hide the info section on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup-section">
+            <div class="app-name">
+                NEWSLETTER<span>APP</span>
+            </div>
+            <div class="signup-form">
+                <h2>Sign Up</h2>
+                <form>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                    <button type="submit">SIGN UP</button>
+                </form>
+                <div class="login-redirect">
+                    Already have an account? <a href="index.html">Login</a>
+                </div>
+            </div>
+        </div>
+        <div class="info-section">
+            <h2>Welcome Back!</h2>
+            <p>To keep connected with us, please login with your personal details</p>
+            <button style="border-radius: 30px;" onclick="window.location.href='login.html'">LOGIN</button>
+        </div>
+    </div>
+</body>
+
+</html>
